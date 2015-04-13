@@ -4,7 +4,9 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/logout', function(req, res, next) {
   req.session.destroy(function(err) {
-    res.send('ログアウトしました');
+    res.render('logout', {
+      title: 'POOKIE'
+    });
   });
 });
 
