@@ -1,4 +1,10 @@
 {
+  "db": {
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "root",
+    "database": "pookie"
+  },
   "twitter": {
     "consumerKey": "Ld8Lp81dazOoNovve78TaTtZ8",
     "consumerSecret": "0I6usEK6o3d04VODuY3Chb6bxYkSvkyJsQNl2YAOpc9HU6MEXe"

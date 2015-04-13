@@ -13,6 +13,7 @@
     "express-session": "^1.11.1",
     "hbs": "~2.9.0",
     "morgan": "~1.5.1",
+    "mysql": "^2.6.1",
     "node-twitter-api": "^1.5.0",
     "serve-favicon": "~2.2.0",
     "stylus": "0.42.3"

@@ -5,8 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var twitterAPI = require('node-twitter-api');
-var conf = require('./config.json');
 
 var routes = {
   index: require('./routes/index'),
@@ -17,12 +15,6 @@ var routes = {
   callback: require('./routes/callback'),
   users: require('./routes/users')
 }
-
-var twitter = new twitterAPI({
-  consumerKey: conf.twitter.consumerKey,
-  consumerSecret: conf.twitter.consumerSecret,
-  callback: 'http://127.0.0.1:3000/callback'
-});
 
 var app = express();
 
