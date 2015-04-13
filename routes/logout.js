@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/logout', function(req, res, next) {
-  res.send('respond with a resource');
+  req.session.destroy(function(err) {
+    res.send('ログアウトしました');
+  });
 });
 
 module.exports = router;
