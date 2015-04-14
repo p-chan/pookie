@@ -6,7 +6,8 @@ router.get('/', function(req, res, next) {
   var sess = req.session.me;
   if (!sess) { // Not Login
     res.render('index_guest', {
-      title: 'POOKIE'
+      title: 'POOKIE',
+      description: 'Pookie is simply social bookmark service.'
     });
   } else { // Login
     res.render('index', {
