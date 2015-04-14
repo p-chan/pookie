@@ -5,6 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var SessionStore = require('express-mysql-session');
+var conf = require('./config.json');
+
+var options = {
+  host: conf.db.host,
+  port: conf.db.port,
+  user: conf.db.user,
+  password: conf.db.password,
+  database: conf.db.database
+}
+
+var sessionStore = new SessionStore(options)
 
 var routes = {
   index: require('./routes/index'),
@@ -32,7 +44,9 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   name: 'sid',
+  key: 'sid',
   secret: 'hoge',
+  store: sessionStore,
   resave: true,
   saveUninitialized: true
 }));
