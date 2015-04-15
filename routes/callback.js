@@ -34,14 +34,13 @@ router.get('/callback', function(req, res, next) {
           } else {
             var client = mysql.createConnection(conf.db);
             client.connect();
-            console.log(me.id_str);
             client.query('select * from users where user_id = ' + me.id_str + ' limit 1;', function (err, user, fields) {
               if (err) console.log(err);
-              console.log(req.session);
               if (!user.length) {
                 var datetime = new Date();
                 var insert_data = {
                   user_id: me.id_str,
+                  user_name: me.name,
                   screen_name: me.screen_name,
                   access_token: accessToken,
                   access_token_secret: accessTokenSecret,

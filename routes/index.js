@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
   } else { // Login
     res.render('index', {
       title: 'POOKIE',
+      description: 'Pookie is simply social bookmark service.',
       user: sess[0].screen_name
     });
   };
